@@ -1,3 +1,20 @@
+Metadata-Version: 2.1
+Name: mlops-modular-telcome-customer-data
+Version: 0.1.0
+Summary: A modular MLOps Pipeline Project for Churn prediction
+Home-page: your-github-repo
+Author: Robiul Hossain
+Author-email: robiulhossain7475@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Beta
+Classifier: Intended Audience :: ML Engineers
+Classifier: Programming Language :: Python >= 3.8
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+
 ## ml-workflow-template
 
 This project is a machine learning workflow template that provides a structured approach to building, training, and deploying machine learning models.
@@ -62,3 +79,5 @@ pip install -e .
 ├── test-logging-integration.py
 └── test-request.py
 ```
+
+
