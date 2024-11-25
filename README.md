@@ -87,3 +87,11 @@ To see the features in feature store
 cd feature_repo
 feast ui
 ```
+
+### Run MLFLOW For expeirement tracking
+
+Run mlflow
+
+```bash
+mlflow ui
+```

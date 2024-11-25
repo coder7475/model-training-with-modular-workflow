@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/353769656674813691/60992dd17eb945f8933deb68bcdb11d0/artifacts
+end_time: 1732545713770
+entry_point_name: ''
+experiment_id: '353769656674813691'
+lifecycle_stage: active
+run_id: 60992dd17eb945f8933deb68bcdb11d0
+run_name: LogisticRegression_training_run_20241125_204045
+run_uuid: 60992dd17eb945f8933deb68bcdb11d0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732545704090
+status: 3
+tags: []
+user_id: fahad

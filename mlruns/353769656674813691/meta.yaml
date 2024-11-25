@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/353769656674813691
+creation_time: 1732545645067
+experiment_id: '353769656674813691'
+last_update_time: 1732545645067
+lifecycle_stage: active
+name: Modular_Workflow_Churn_Prediction_Pipeline

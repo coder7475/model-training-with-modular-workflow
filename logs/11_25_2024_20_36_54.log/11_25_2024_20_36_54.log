@@ -1,0 +1,50 @@
+[ 2024-11-25 20:37:00,564 ] 227 root - INFO - Starting Data Ingestion
+[ 2024-11-25 20:37:00,564 ] 22 root - INFO - Data Ingestion has been started
+[ 2024-11-25 20:37:00,565 ] 24 root - INFO - Data reading using Pandas from local file system
+[ 2024-11-25 20:37:00,607 ] 26 root - INFO - Data Reading has been completed
+[ 2024-11-25 20:37:00,674 ] 30 root - INFO - Raw data has been stored
+[ 2024-11-25 20:37:00,681 ] 33 root - INFO - Raw data has been splitted into Train and Test set
+[ 2024-11-25 20:37:00,741 ] 38 root - INFO - Data Ingestion has been completed!
+[ 2024-11-25 20:37:00,745 ] 234 root - INFO - Starting Data Transformation
+[ 2024-11-25 20:37:00,745 ] 50 root - INFO - Created feature store configuration at /home/fahad/mlops/model-training-with-modular-workflow/feature_repo/feature_store.yaml
+[ 2024-11-25 20:37:00,746 ] 54 root - INFO - Configuration file content:
+project: churn_prediction
+provider: local
+registry: data/registry.db
+online_store:
+  type: sqlite
+offline_store:
+  type: file
+entity_key_serialization_version: 2
+[ 2024-11-25 20:37:01,471 ] 58 root - INFO - Feature store initialized successfully
+[ 2024-11-25 20:37:01,506 ] 114 root - INFO - Read train and test data completed
+[ 2024-11-25 20:37:01,507 ] 115 root - INFO - Obtaining preprocessing object
+[ 2024-11-25 20:37:01,507 ] 66 root - INFO - Data Transformation Started
+[ 2024-11-25 20:37:01,513 ] 132 root - INFO - Applying preprocessing object on training and testing datasets.
+[ 2024-11-25 20:37:01,564 ] 137 root - INFO - Starting feature store operations
+[ 2024-11-25 20:37:01,629 ] 182 root - INFO - Saved feature data to feature_repo/data/train_features.parquet
+[ 2024-11-25 20:37:01,634 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 20:37:01,644 ] 409 root - WARNING - Cannot use sqlite_vec for vector search
+[ 2024-11-25 20:37:01,662 ] 229 root - INFO - Applied entity and feature view for train
+[ 2024-11-25 20:37:01,662 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 20:37:01,670 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 20:37:01,671 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 20:37:07,152 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 20:37:08,176 ] 236 root - INFO - Materialized features successfully
+[ 2024-11-25 20:37:08,177 ] 141 root - INFO - Pushed training data to feature store
+[ 2024-11-25 20:37:08,186 ] 182 root - INFO - Saved feature data to feature_repo/data/test_features.parquet
+[ 2024-11-25 20:37:08,189 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 20:37:08,195 ] 229 root - INFO - Applied entity and feature view for test
+[ 2024-11-25 20:37:08,195 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 20:37:08,201 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 20:37:08,201 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 20:37:12,783 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 20:37:14,705 ] 236 root - INFO - Materialized features successfully
+[ 2024-11-25 20:37:14,705 ] 144 root - INFO - Pushed testing data to feature store
+[ 2024-11-25 20:37:14,712 ] 242 root - INFO - Starting Model Training
+[ 2024-11-25 20:37:14,715 ] 250 root - ERROR - Error in training pipeline: name 'ModelTrainer' is not defined
+[ 2024-11-25 20:37:14,715 ] 51 root - ERROR - 
+Error occurred in Python script:
+→ File: /home/fahad/mlops/model-training-with-modular-workflow/src/components/model_trainer.py
+→ Line number: 243
+→ Error message: name 'ModelTrainer' is not defined

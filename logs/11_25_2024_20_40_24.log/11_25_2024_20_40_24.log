@@ -1,0 +1,55 @@
+[ 2024-11-25 20:40:29,894 ] 22 root - INFO - Data Ingestion has been started
+[ 2024-11-25 20:40:29,895 ] 24 root - INFO - Data reading using Pandas from local file system
+[ 2024-11-25 20:40:29,932 ] 26 root - INFO - Data Reading has been completed
+[ 2024-11-25 20:40:29,998 ] 30 root - INFO - Raw data has been stored
+[ 2024-11-25 20:40:30,002 ] 33 root - INFO - Raw data has been splitted into Train and Test set
+[ 2024-11-25 20:40:30,060 ] 38 root - INFO - Data Ingestion has been completed!
+[ 2024-11-25 20:40:30,061 ] 50 root - INFO - Created feature store configuration at /home/fahad/mlops/model-training-with-modular-workflow/feature_repo/feature_store.yaml
+[ 2024-11-25 20:40:30,061 ] 54 root - INFO - Configuration file content:
+project: churn_prediction
+provider: local
+registry: data/registry.db
+online_store:
+  type: sqlite
+offline_store:
+  type: file
+entity_key_serialization_version: 2
+[ 2024-11-25 20:40:30,803 ] 58 root - INFO - Feature store initialized successfully
+[ 2024-11-25 20:40:30,825 ] 114 root - INFO - Read train and test data completed
+[ 2024-11-25 20:40:30,825 ] 115 root - INFO - Obtaining preprocessing object
+[ 2024-11-25 20:40:30,826 ] 66 root - INFO - Data Transformation Started
+[ 2024-11-25 20:40:30,828 ] 132 root - INFO - Applying preprocessing object on training and testing datasets.
+[ 2024-11-25 20:40:30,855 ] 137 root - INFO - Starting feature store operations
+[ 2024-11-25 20:40:30,877 ] 182 root - INFO - Saved feature data to feature_repo/data/train_features.parquet
+[ 2024-11-25 20:40:30,882 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 20:40:30,887 ] 409 root - WARNING - Cannot use sqlite_vec for vector search
+[ 2024-11-25 20:40:30,892 ] 229 root - INFO - Applied entity and feature view for train
+[ 2024-11-25 20:40:30,893 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 20:40:30,897 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 20:40:30,898 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 20:40:36,175 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 20:40:37,732 ] 236 root - INFO - Materialized features successfully
+[ 2024-11-25 20:40:37,733 ] 141 root - INFO - Pushed training data to feature store
+[ 2024-11-25 20:40:37,742 ] 182 root - INFO - Saved feature data to feature_repo/data/test_features.parquet
+[ 2024-11-25 20:40:37,744 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 20:40:37,750 ] 229 root - INFO - Applied entity and feature view for test
+[ 2024-11-25 20:40:37,750 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 20:40:37,755 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 20:40:37,756 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 20:40:43,229 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 20:40:44,729 ] 236 root - INFO - Materialized features successfully
+[ 2024-11-25 20:40:44,729 ] 144 root - INFO - Pushed testing data to feature store
+[ 2024-11-25 20:40:45,076 ] 124 root - INFO - Starting model training pipeline
+[ 2024-11-25 20:40:45,076 ] 167 root - INFO - Training RandomForest
+[ 2024-11-25 20:40:45,303 ] 53 root - INFO - Started Training RandomForest
+[ 2024-11-25 20:41:23,247 ] 74 root - INFO - Best Paramaters for RandomForest: {'best_class_weight': 'balanced', 'best_max_depth': 10, 'best_min_samples_split': 2, 'best_n_estimators': 20}
+[ 2024-11-25 20:41:31,107 ] 115 root - INFO - Completed Training RandomForest
+[ 2024-11-25 20:41:31,137 ] 167 root - INFO - Training DecisionTree
+[ 2024-11-25 20:41:31,169 ] 53 root - INFO - Started Training DecisionTree
+[ 2024-11-25 20:41:39,732 ] 74 root - INFO - Best Paramaters for DecisionTree: {'best_class_weight': 'balanced', 'best_criterion': 'gini', 'best_max_depth': 3, 'best_min_samples_split': 2}
+[ 2024-11-25 20:41:44,058 ] 115 root - INFO - Completed Training DecisionTree
+[ 2024-11-25 20:41:44,087 ] 167 root - INFO - Training LogisticRegression
+[ 2024-11-25 20:41:44,130 ] 53 root - INFO - Started Training LogisticRegression
+[ 2024-11-25 20:41:49,658 ] 74 root - INFO - Best Paramaters for LogisticRegression: {'best_C': 10, 'best_class_weight': 'balanced', 'best_solver': 'liblinear'}
+[ 2024-11-25 20:41:53,769 ] 115 root - INFO - Completed Training LogisticRegression
+[ 2024-11-25 20:41:53,808 ] 184 root - INFO - Best model: RandomForest with accuracy:0.794889992902768
