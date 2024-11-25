@@ -10,8 +10,9 @@ from dataclasses import dataclass
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from src.utils import save_object
+# Feast
 from feast import Field, FeatureStore, Entity, FeatureView, FileSource
-from feast.types import Int64, String
+from feast.types import Int64, String, Float64
 from feast.value_type import ValueType
 from datetime import datetime, timedelta
 
