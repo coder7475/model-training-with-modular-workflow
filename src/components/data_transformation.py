@@ -115,10 +115,12 @@ entity_key_serialization_version: 2"""
 
             preprocessing_obj = self.get_data_transformation_obj()
 
-            target_column_name = "income"
-            numerical_columns = ['age', 'workclass', 'education_num', 'marital_status',
-                               'occupation', 'relationship', 'race', 'sex', 'capital_gain',
-                               'capital_loss', 'hours_per_week', 'native_country']
+            target_column_name = 'Churn'
+            numerical_columns = ['customerID', 'gender', 'SeniorCitizen', 'Partner', 'Dependents',
+                'tenure', 'PhoneService', 'MultipleLines', 'InternetService',
+                'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport',
+                'StreamingTV', 'StreamingMovies', 'Contract', 'PaperlessBilling',
+                'PaymentMethod', 'MonthlyCharges', 'TotalCharges' ]
 
             input_feature_train_df = train_data.drop(columns=[target_column_name], axis=1)
             target_feature_train_df = train_data[target_column_name]
@@ -194,20 +196,28 @@ entity_key_serialization_version: 2"""
             # Define feature view
             feature_view = FeatureView(
                 name=f"{entity_id}_features",
-                entities=[entity],
-                schema=[
-                    Field(name="age", dtype=Int64),
-                    Field(name="workclass", dtype=String),
-                    Field(name="education_num", dtype=Int64),
-                    Field(name="marital_status", dtype=String),
-                    Field(name="occupation", dtype=String),
-                    Field(name="relationship", dtype=String),
-                    Field(name="race", dtype=String),
-                    Field(name="sex", dtype=String),
-                    Field(name="capital_gain", dtype=Int64),
-                    Field(name="capital_loss", dtype=Int64),
-                    Field(name="hours_per_week", dtype=Int64),
-                    Field(name="native_country", dtype=String)
+                entities=[entity],               
+                schema = [
+                    Field(name="customerID", dtype=String),  # Assuming 'customerID' is a string
+                    Field(name="gender", dtype=String),
+                    Field(name="SeniorCitizen", dtype=Int64),
+                    Field(name="Partner", dtype=String),
+                    Field(name="Dependents", dtype=String),
+                    Field(name="tenure", dtype=Int64),
+                    Field(name="PhoneService", dtype=String),
+                    Field(name="MultipleLines", dtype=String),
+                    Field(name="InternetService", dtype=String),
+                    Field(name="OnlineSecurity", dtype=String),
+                    Field(name="OnlineBackup", dtype=String),
+                    Field(name="DeviceProtection", dtype=String),
+                    Field(name="TechSupport", dtype=String),
+                    Field(name="StreamingTV", dtype=String),
+                    Field(name="StreamingMovies", dtype=String),
+                    Field(name="Contract", dtype=String),
+                    Field(name="PaperlessBilling", dtype=String),
+                    Field(name="PaymentMethod", dtype=String),
+                    Field(name="MonthlyCharges", dtype=Float64),  
+                    Field(name="TotalCharges", dtype=String)    
                 ],
                 source=data_source,
                 online=True
@@ -231,20 +241,28 @@ entity_key_serialization_version: 2"""
     def retrieve_features_from_store(self, entity_id):
         try:
             feature_service_name = f"{entity_id}_features"
-            feature_vector = self.feature_store.get_online_features(
-                feature_refs=[
-                    f"{entity_id}_features:age",
-                    f"{entity_id}_features:workclass",
-                    f"{entity_id}_features:education_num",
-                    f"{entity_id}_features:marital_status",
-                    f"{entity_id}_features:occupation",
-                    f"{entity_id}_features:relationship",
-                    f"{entity_id}_features:race",
-                    f"{entity_id}_features:sex",
-                    f"{entity_id}_features:capital_gain",
-                    f"{entity_id}_features:capital_loss",
-                    f"{entity_id}_features:hours_per_week",
-                    f"{entity_id}_features:native_country"
+            feature_vector = self.feature_store.get_online_features(                
+                feature_refs = [
+                    f"{entity_id}_features:customerID",
+                    f"{entity_id}_features:gender",
+                    f"{entity_id}_features:SeniorCitizen",
+                    f"{entity_id}_features:Partner",
+                    f"{entity_id}_features:Dependents",
+                    f"{entity_id}_features:tenure",
+                    f"{entity_id}_features:PhoneService",
+                    f"{entity_id}_features:MultipleLines",
+                    f"{entity_id}_features:InternetService",
+                    f"{entity_id}_features:OnlineSecurity",
+                    f"{entity_id}_features:OnlineBackup",
+                    f"{entity_id}_features:DeviceProtection",
+                    f"{entity_id}_features:TechSupport",
+                    f"{entity_id}_features:StreamingTV",
+                    f"{entity_id}_features:StreamingMovies",
+                    f"{entity_id}_features:Contract",
+                    f"{entity_id}_features:PaperlessBilling",
+                    f"{entity_id}_features:PaymentMethod",
+                    f"{entity_id}_features:MonthlyCharges",
+                    f"{entity_id}_features:TotalCharges"
                 ],
                 entity_rows=[{"entity_id": i} for i in range(len(df))]
             ).to_df()
