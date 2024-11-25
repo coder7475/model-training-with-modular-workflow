@@ -24,6 +24,7 @@ To activate the Python virtual environment, navigate to the project directory in
 
 ```bash
 source venv/bin/activate
+export PYTHONPATH=~/mlops/model-training-with-modular-workflow
 ```
 
 To install all packages from requirements.txt, run the following command:
