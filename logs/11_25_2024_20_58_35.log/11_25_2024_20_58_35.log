@@ -1,0 +1,4 @@
+[ 2024-11-25 20:58:36,628 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-11-25 20:58:36,879 ] 97 werkzeug - INFO -  * Debugger PIN: 124-972-480
+[ 2024-11-25 20:58:36,900 ] 97 werkzeug - INFO - 127.0.0.1 - - [25/Nov/2024 20:58:36] "[33mPOST /ajax-api/2.0/mlflow/runs/search HTTP/1.1[0m" 404 -
+[ 2024-11-25 20:59:36,685 ] 97 werkzeug - INFO - 127.0.0.1 - - [25/Nov/2024 20:59:36] "[33mPOST /ajax-api/2.0/mlflow/runs/search HTTP/1.1[0m" 404 -

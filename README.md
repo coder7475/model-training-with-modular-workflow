@@ -103,3 +103,22 @@ Keep the mlflow server running then simply run:
 ```bash
 python3 src/pipelines/training_pipeline.py
 ```
+
+### Run flask app
+
+```bash
+python3 app.py
+```
+
+### Test with a test file
+
+```bash
+python3 test-request.py
+```
+
+Output:
+
+```bash
+Status Code: 200
+Response: {'churn_category': 'No', 'prediction': 0, 'status': 'success'}
+```
