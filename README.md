@@ -95,3 +95,11 @@ Run mlflow
 ```bash
 mlflow ui
 ```
+
+### Run ml pipeline and experiment tracking
+
+Keep the mlflow server running then simply run:
+
+```bash
+python3 src/pipelines/training_pipeline.py
+```
