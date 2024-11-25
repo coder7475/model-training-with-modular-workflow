@@ -5,8 +5,8 @@ This project is a machine learning workflow template that provides a structured 
 ### Table of Contents
 
 - [Installation](#installation)
-- [Usage](#usage)
 - [Directory Structure](#directory-structure)
+- [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -61,4 +61,20 @@ pip install -e .
 ├── folder_structure_setup.sh
 ├── test-logging-integration.py
 └── test-request.py
+```
+
+### Usage
+
+### Data Version Control
+
+DVC
+
+```bash
+dvc init
+```
+
+Track using
+
+```bash
+dvc add artifacts/data_ingestion/raw.csv
 ```
