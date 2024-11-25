@@ -78,3 +78,12 @@ Track using
 ```bash
 dvc add artifacts/data_ingestion/raw.csv
 ```
+
+### Feature Store
+
+To see the features in feature store
+
+```bash
+cd feature_repo
+feast ui
+```

@@ -1,0 +1,42 @@
+[ 2024-11-25 18:39:45,238 ] 22 root - INFO - Data Ingestion has been started
+[ 2024-11-25 18:39:45,238 ] 24 root - INFO - Data reading using Pandas from local file system
+[ 2024-11-25 18:39:45,260 ] 26 root - INFO - Data Reading has been completed
+[ 2024-11-25 18:39:45,317 ] 30 root - INFO - Raw data has been stored
+[ 2024-11-25 18:39:45,322 ] 33 root - INFO - Raw data has been splitted into Train and Test set
+[ 2024-11-25 18:39:45,384 ] 38 root - INFO - Data Ingestion has been completed!
+[ 2024-11-25 18:39:45,387 ] 50 root - INFO - Created feature store configuration at /home/fahad/mlops/model-training-with-modular-workflow/feature_repo/feature_store.yaml
+[ 2024-11-25 18:39:45,387 ] 54 root - INFO - Configuration file content:
+project: churn_prediction
+provider: local
+registry: data/registry.db
+online_store:
+  type: sqlite
+offline_store:
+  type: file
+entity_key_serialization_version: 2
+[ 2024-11-25 18:39:46,382 ] 230 feast.infra.registry.registry - INFO - Registry file not found. Creating new registry.
+[ 2024-11-25 18:39:46,390 ] 58 root - INFO - Feature store initialized successfully
+[ 2024-11-25 18:39:46,419 ] 114 root - INFO - Read train and test data completed
+[ 2024-11-25 18:39:46,420 ] 115 root - INFO - Obtaining preprocessing object
+[ 2024-11-25 18:39:46,420 ] 66 root - INFO - Data Transformation Started
+[ 2024-11-25 18:39:46,427 ] 132 root - INFO - Applying preprocessing object on training and testing datasets.
+[ 2024-11-25 18:39:46,475 ] 137 root - INFO - Starting feature store operations
+[ 2024-11-25 18:39:46,559 ] 182 root - INFO - Saved feature data to feature_repo/data/train_features.parquet
+[ 2024-11-25 18:39:46,563 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 18:39:46,564 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 18:39:46,569 ] 409 root - WARNING - Cannot use sqlite_vec for vector search
+[ 2024-11-25 18:39:46,605 ] 229 root - INFO - Applied entity and feature view for train
+[ 2024-11-25 18:39:46,605 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 18:39:46,609 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 18:39:46,610 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 18:39:53,476 ] 236 root - INFO - Materialized features successfully
+[ 2024-11-25 18:39:53,476 ] 141 root - INFO - Pushed training data to feature store
+[ 2024-11-25 18:39:53,488 ] 182 root - INFO - Saved feature data to feature_repo/data/test_features.parquet
+[ 2024-11-25 18:39:53,492 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 18:39:53,525 ] 229 root - INFO - Applied entity and feature view for test
+[ 2024-11-25 18:39:53,525 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 18:39:53,533 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 18:39:53,533 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 18:39:58,862 ] 920 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2024-11-25 18:40:00,682 ] 236 root - INFO - Materialized features successfully
+[ 2024-11-25 18:40:00,682 ] 144 root - INFO - Pushed testing data to feature store
