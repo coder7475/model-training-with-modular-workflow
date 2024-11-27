@@ -27,18 +27,28 @@ The raw data contains 7043 rows (customers) and 21 columns (features).
 
 The “Churn” column is our target.
 
+### Prerequisites
+
+- python3.8 (or any other version)
+- python3.8-venv (venv of that version)
+
 ### Installation
 
-To install virtual environment:
+To run this project, first install virtual environment:
 
 ```bash
 python3 -m venv venv
 ```
 
-To activate the Python virtual environment, navigate to the project directory in your terminal and run the following command:
+Then to activate the Python virtual environment, run the following command:
 
 ```bash
 source venv/bin/activate
+```
+
+Then run the following code to make sure python has path to virtual environments python:
+
+```bash
 export PYTHONPATH=~/path_to_directory/model-training-with-modular-workflow
 ```
 
