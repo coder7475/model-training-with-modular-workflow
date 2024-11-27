@@ -52,13 +52,24 @@ Then run the following code to make sure python has path to virtual environments
 export PYTHONPATH=~/path_to_directory/model-training-with-modular-workflow
 ```
 
-To install all packages from requirements.txt, run the following command:
+To install all packages and initialize the project: run the following command:
 
 ```bash
 pip install -e .
 ```
 
+This will run the setup.py file to initialize the project. Make sure you have `requirements.txt`,
+`README.md` file ready.
+
 ### Directory Structure
+
+To set up the folder structure run the `folder_structure_setup.sh`. Run:
+
+```bash
+bash folder_structure_setup.sh
+```
+
+This will generate a folder structure necessary for modular workflow. See below:
 
 ```bash
 ├── data-source
