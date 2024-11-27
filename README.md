@@ -1,18 +1,33 @@
-## ml-workflow-template
+## ML Modular Workflow Setup
 
-This project is a machine learning workflow template that provides a structured approach to building, training, and deploying machine learning models.
+This project demonstrates a machine learning workflow that provides a structured approach to building, training, and deploying machine learning models.
 
 ### Table of Contents
 
+- [Dataset](#dataset)
 - [Installation](#installation)
 - [Directory Structure](#directory-structure)
-- [Usage](#usage)
+- [Workflow Steps](#workflow-steps)
 - [Contributing](#contributing)
 - [License](#license)
 
-### Installation
+### Dataset
 
-To set up the project, clone the repository and run the `folder_structure_setup.sh` script to create the necessary directories and files.
+The provided dataset can be found at: [Telco Customer Churn] https://www.kaggle.com/datasets/blastchar/telco-customer-churn
+
+In this repository: data-source/Telco-Customer-Churn.csv
+
+#### About Dataset
+
+**Telcom Customer Churn**
+
+Each row represents a customer, each column contains customer’s attributes described on the column Metadata.
+
+The raw data contains 7043 rows (customers) and 21 columns (features).
+
+The “Churn” column is our target.
+
+### Installation
 
 To install virtual environment:
 
