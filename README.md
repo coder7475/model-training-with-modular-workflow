@@ -2,6 +2,10 @@
 
 This project demonstrates a machine learning workflow that provides a structured approach to building, training, and deploying machine learning models.
 
+## Business Context
+
+Aim of this project is to develop a ml system to predict the behavior of customers as to retain customer.
+
 ### Table of Contents
 
 - [Dataset](#dataset)
@@ -17,7 +21,7 @@ The provided dataset can be found at: [Telco Customer Churn](https://www.kaggle.
 
 In this repository: `data-source/Telco-Customer-Churn.csv`
 
-**Telcom Customer Churn**
+**About Telcom Customer Churn Dataset**
 
 Each row represents a customer, each column contains customer’s attributes described on the column Metadata.
 
@@ -50,13 +54,15 @@ Then run the following code to make sure python has path to virtual environments
 export PYTHONPATH=~/path_to_directory/model-training-with-modular-workflow
 ```
 
-To install all packages and initialize the project: run the following command:
+Make sure to replace path_to directory with your local path.
+
+To install all packages and initialize the project, run the following command:
 
 ```bash
 pip install -e .
 ```
 
-This will run the setup.py file to initialize the project. Make sure you have `requirements.txt`,
+This will run the setup.py file to initialize the project and save metadata. Make sure you have `requirements.txt`,
 `README.md` file ready.
 
 ### Directory Structure
@@ -98,6 +104,10 @@ This will generate a folder structure necessary for modular workflow. See below:
 ```
 
 ### Workflow Steps
+
+Machine Learning training and development phase can be divided largely divided into 4 steps:
+
+1. **Data Ingestion**: In this step raw data is taken from data sources (e.g database, warehouse etc) and preprocessed and split into training and test sets.
 
 ### Data Version Control
 

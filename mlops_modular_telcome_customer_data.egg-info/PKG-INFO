@@ -30,11 +30,9 @@ This project demonstrates a machine learning workflow that provides a structured
 
 ### Dataset
 
-The provided dataset can be found at: [Telco Customer Churn] https://www.kaggle.com/datasets/blastchar/telco-customer-churn
+The provided dataset can be found at: [Telco Customer Churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
 
-In this repository: data-source/Telco-Customer-Churn.csv
-
-#### About Dataset
+In this repository: `data-source/Telco-Customer-Churn.csv`
 
 **Telcom Customer Churn**
 
@@ -80,6 +78,14 @@ This will run the setup.py file to initialize the project. Make sure you have `r
 
 ### Directory Structure
 
+To set up the folder structure run the `folder_structure_setup.sh`. Run:
+
+```bash
+bash folder_structure_setup.sh
+```
+
+This will generate a folder structure necessary for modular workflow. See below:
+
 ```bash
 ├── data-source
 ├── src
@@ -108,7 +114,7 @@ This will run the setup.py file to initialize the project. Make sure you have `r
 └── test-request.py
 ```
 
-### Usage
+### Workflow Steps
 
 ### Data Version Control
 
