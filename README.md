@@ -13,11 +13,9 @@ This project demonstrates a machine learning workflow that provides a structured
 
 ### Dataset
 
-The provided dataset can be found at: [Telco Customer Churn] https://www.kaggle.com/datasets/blastchar/telco-customer-churn
+The provided dataset can be found at: [Telco Customer Churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
 
-In this repository: data-source/Telco-Customer-Churn.csv
-
-#### About Dataset
+In this repository: `data-source/Telco-Customer-Churn.csv`
 
 **Telcom Customer Churn**
 
@@ -99,7 +97,7 @@ This will generate a folder structure necessary for modular workflow. See below:
 └── test-request.py
 ```
 
-### Usage
+### Workflow Steps
 
 ### Data Version Control
 
