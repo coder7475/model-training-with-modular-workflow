@@ -105,9 +105,21 @@ This will generate a folder structure necessary for modular workflow. See below:
 
 ### Workflow Steps
 
-Machine Learning training and development phase can be divided largely divided into 4 steps:
+Machine Learning training and development phase can be divided into 4 steps:
 
-1. **Data Ingestion**: In this step raw data is taken from data sources (e.g database, warehouse etc) and preprocessed and split into training and test sets.
+1. **Data Ingestion**: In this step raw data is taken from data sources (e.g database, warehouse etc) and preprocessed and split into training, test and validation sets.
+
+2. **Data transformation**: This is stage for data exploration, data cleaning, feature engineering. It takes raw data from data ingestion stage and creates featured data for model training.
+
+3. **Model Training**: This stages takes the featured data from data transformation stage and trains models using the data. This stage work is to select architecture for model continuously train, tune a model. The models is the output of this stage.
+
+4. **Model Evaluation**: This stage compares the trained model to select the best of them. Prepares the model for deployment.
+
+The deployment and monitoring phase for ML model includes:
+
+1. **Backend App Development**: Create a backend app to serve the model through api.
+2. **Testing**: Testing the app serves correctly.
+3. **Monitoring**: Monitoring the app is healthy and can serve reliably.
 
 ### Data Version Control
 
