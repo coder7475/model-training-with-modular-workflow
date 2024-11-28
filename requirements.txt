@@ -9,4 +9,3 @@ jupyter
 feast
 mlflow
 flask
-fastapi[standard]

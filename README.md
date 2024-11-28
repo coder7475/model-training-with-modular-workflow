@@ -115,82 +115,92 @@ Machine Learning training and development phase can be divided into 4 steps:
 
 4. **Model Evaluation**: This stage compares the trained model to select the best of them. Prepares the model for deployment.
 
-The deployment and monitoring phase for ML model includes:
+## Tools Used
 
-1. **Backend App Development**: Create a backend app to serve the model through api.
-2. **Testing**: Testing the app serves correctly.
-3. **Monitoring**: Monitoring the app is healthy and can serve reliably.
+### 1. **DVC (Data Version Control)**
 
-### Tools Used
+DVC is used for tracking data files and ensuring version control for datasets.
 
-1. **DVC (Data Version Control)**
-
-DVC
+#### Initialize DVC
 
 ```bash
 dvc init
 ```
 
-Track using
+#### Track Files
 
 ```bash
 dvc add artifacts/data_ingestion/raw.csv
 ```
 
-### Feature Store
+---
 
-To see the features in feature store
+### 2. **Feature Store**
+
+The feature store is managed using Feast, allowing storage and retrieval of features.
+
+#### View Feature Store
 
 ```bash
 cd feature_repo
 feast ui
 ```
 
-### Run MLFLOW For expeirement tracking
+---
 
-Run mlflow
+### 3. **MLflow for Experiment Tracking**
+
+MLflow is used to track experiments and visualize metrics.
+
+#### Start MLflow Server
 
 ```bash
 mlflow ui
 ```
 
-### Run ml pipeline and experiment tracking
+---
 
-Keep the mlflow server running then simply run:
+### 4. **Run ML Pipeline and Experiment Tracking**
+
+Execute the training pipeline and track the experiment metrics on MLflow.
+
+#### Run Training Pipeline
+
+Ensure the MLflow server is running before executing:
 
 ```bash
 python3 src/pipelines/training_pipeline.py
 ```
 
-### Run flask app
+---
+
+### 5. **Run Flask App**
+
+A Flask application is provided for serving the model.
+
+#### Start the Flask App
 
 ```bash
 python3 app.py
 ```
 
-### Test with a test file
+---
+
+### 6. **Test the Model API**
+
+Test the API using the provided test file.
+
+#### Run Test Request
 
 ```bash
 python3 test-request.py
 ```
 
-Output:
+#### Expected Output
 
 ```bash
 Status Code: 200
 Response: {'churn_category': 'No', 'prediction': 0, 'status': 'success'}
 ```
 
-## Fast API
-
-Dev mode
-
-```bash
-fastapi dev main.py
-```
-
-Production mode
-
-```bash
-fastapi run main.py
-```
+---
