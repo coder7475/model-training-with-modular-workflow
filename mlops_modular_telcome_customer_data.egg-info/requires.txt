@@ -1,4 +1,5 @@
 dvc
+fastapi
 feast
 flask
 jupyter

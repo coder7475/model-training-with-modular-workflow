@@ -121,7 +121,9 @@ The deployment and monitoring phase for ML model includes:
 2. **Testing**: Testing the app serves correctly.
 3. **Monitoring**: Monitoring the app is healthy and can serve reliably.
 
-### Data Version Control
+### Tools Used
+
+1. **DVC (Data Version Control)**
 
 DVC
 
@@ -177,4 +179,18 @@ Output:
 ```bash
 Status Code: 200
 Response: {'churn_category': 'No', 'prediction': 0, 'status': 'success'}
+```
+
+## Fast API
+
+Dev mode
+
+```bash
+fastapi dev main.py
+```
+
+Production mode
+
+```bash
+fastapi run main.py
 ```

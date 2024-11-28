@@ -19,6 +19,10 @@ Provides-Extra: dev
 
 This project demonstrates a machine learning workflow that provides a structured approach to building, training, and deploying machine learning models.
 
+## Business Context
+
+Aim of this project is to develop a ml system to predict the behavior of customers as to retain customer.
+
 ### Table of Contents
 
 - [Dataset](#dataset)
@@ -34,7 +38,7 @@ The provided dataset can be found at: [Telco Customer Churn](https://www.kaggle.
 
 In this repository: `data-source/Telco-Customer-Churn.csv`
 
-**Telcom Customer Churn**
+**About Telcom Customer Churn Dataset**
 
 Each row represents a customer, each column contains customer’s attributes described on the column Metadata.
 
@@ -67,13 +71,15 @@ Then run the following code to make sure python has path to virtual environments
 export PYTHONPATH=~/path_to_directory/model-training-with-modular-workflow
 ```
 
-To install all packages and initialize the project: run the following command:
+Make sure to replace path_to directory with your local path.
+
+To install all packages and initialize the project, run the following command:
 
 ```bash
 pip install -e .
 ```
 
-This will run the setup.py file to initialize the project. Make sure you have `requirements.txt`,
+This will run the setup.py file to initialize the project and save metadata. Make sure you have `requirements.txt`,
 `README.md` file ready.
 
 ### Directory Structure
@@ -116,7 +122,25 @@ This will generate a folder structure necessary for modular workflow. See below:
 
 ### Workflow Steps
 
-### Data Version Control
+Machine Learning training and development phase can be divided into 4 steps:
+
+1. **Data Ingestion**: In this step raw data is taken from data sources (e.g database, warehouse etc) and preprocessed and split into training, test and validation sets.
+
+2. **Data transformation**: This is stage for data exploration, data cleaning, feature engineering. It takes raw data from data ingestion stage and creates featured data for model training.
+
+3. **Model Training**: This stages takes the featured data from data transformation stage and trains models using the data. This stage work is to select architecture for model continuously train, tune a model. The models is the output of this stage.
+
+4. **Model Evaluation**: This stage compares the trained model to select the best of them. Prepares the model for deployment.
+
+The deployment and monitoring phase for ML model includes:
+
+1. **Backend App Development**: Create a backend app to serve the model through api.
+2. **Testing**: Testing the app serves correctly.
+3. **Monitoring**: Monitoring the app is healthy and can serve reliably.
+
+### Tools Used
+
+1. **DVC (Data Version Control)**
 
 DVC
 
