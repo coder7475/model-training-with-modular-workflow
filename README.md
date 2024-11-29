@@ -231,3 +231,17 @@ flask dev main.py
 You will see the app at `https://localhost:8000`
 
 The create api for ml model inference is `https://localhost:8000/predict`
+
+# Deploy to production
+
+Use docker to build a image to deploy:
+
+```bash
+docker build -t flask-ml:0 .
+```
+
+Run the container in detach mode to deploy:
+
+```bash
+docker run -d -p 8000:8000 flask-ml:0
+```
