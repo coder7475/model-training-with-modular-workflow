@@ -3,8 +3,6 @@ import json
 
 # Test data
 test_data = {
-
-
     'customerID': 7000,
     'gender': 1, 
     'SeniorCitizen': 1, 

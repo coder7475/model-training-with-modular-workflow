@@ -2,5 +2,5 @@
 venv/
 env/
 ENV/
-
-fastapi-venv
+v-fast/
+fastapi-venv/

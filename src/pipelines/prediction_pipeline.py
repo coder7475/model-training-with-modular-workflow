@@ -23,7 +23,7 @@ class PredictionPipeline:
 
 @dataclass
 class CustomClass:
-    customerID: str
+    customerID: int
     gender: int
     SeniorCitizen: int
     Partner: int
