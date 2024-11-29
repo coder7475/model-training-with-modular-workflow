@@ -50,7 +50,7 @@ async def predict(payload: CustomClass):
         return {
             "status": "success",
             "prediction": int(pred[0]),
-            "churn_category": "No" if pred[0] == 0 else "Yes"
+            "churn": "No" if pred[0] == 0 else "Yes"
         }
 
     except Exception as e:
