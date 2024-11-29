@@ -25,7 +25,30 @@ test_data = {
     'TotalCharges': 600
 }
 
-# Send POST request
+test_data_2 = {
+    'customerID': 557543,
+    'gender': 1, 
+    'SeniorCitizen': 1, 
+    'Partner': 1,
+    'Dependents': 1,
+    'tenure': 34,
+    'PhoneService': 1,
+    'MultipleLines': 1,
+    'InternetService': 1,
+    'OnlineSecurity': 2,
+    'OnlineBackup': 1,
+    'DeviceProtection': 2,
+    'TechSupport': 1,
+    'StreamingTV': 1,
+    'StreamingMovies': 1,
+    'Contract': 1,
+    'PaperlessBilling': 1,
+    'PaymentMethod': 1,
+    'MonthlyCharges': 563.95,
+    'TotalCharges': 188329.5
+}
+
+# Send POST request 1
 response = requests.post(
     "http://localhost:8000/predict",
     json=test_data,
@@ -35,3 +58,15 @@ response = requests.post(
 # Print results
 print("Status Code:", response.status_code)
 print("Response:", response.json())
+
+# Send POST request 2
+response = requests.post(
+    "http://localhost:8000/predict",
+    json=test_data_2,
+    headers={"Content-Type": "application/json"}
+)
+
+# Print results
+print("Status Code:", response.status_code)
+print("Response:", response.json())
+

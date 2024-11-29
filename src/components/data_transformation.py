@@ -199,7 +199,7 @@ entity_key_serialization_version: 2"""
                 name=f"{entity_id}_features",
                 entities=[entity],               
                 schema = [
-                    Field(name="customerID", dtype=String),  # Assuming 'customerID' is a string
+                    Field(name="customerID", dtype=String),  
                     Field(name="gender", dtype=String),
                     Field(name="SeniorCitizen", dtype=Int64),
                     Field(name="Partner", dtype=String),
