@@ -204,3 +204,30 @@ Response: {'churn_category': 'No', 'prediction': 0, 'status': 'success'}
 ```
 
 ---
+
+## Create API Endpoints with FastAPI
+
+Run flask in dev mode:
+
+1. first change virtual environment to v-fast:
+
+```bash
+python3 -m venv v-fast
+source v-fast/bin/activate
+```
+
+2. Install required packages
+
+```bash
+pip install -r fast-requirements.txt
+```
+
+3. Run the App in dev mode:
+
+```bash
+flask dev main.py
+```
+
+You will see the app at `https://localhost:8000`
+
+The create api for ml model inference is `https://localhost:8000/predict`
