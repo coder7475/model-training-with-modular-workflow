@@ -225,7 +225,7 @@ pip install -r fast-requirements.txt
 3. Run the App in dev mode:
 
 ```bash
-flask dev main.py
+fastapi dev main.py
 ```
 
 You will see the app at `https://localhost:8000`
