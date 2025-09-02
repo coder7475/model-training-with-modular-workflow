@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/353769656674813691/648732c6255649ecb068b639786f03c3/artifacts
+end_time: 1756830783586
+entry_point_name: ''
+experiment_id: '353769656674813691'
+lifecycle_stage: active
+run_id: 648732c6255649ecb068b639786f03c3
+run_name: DecisionTree_training_run_20250902_223211
+run_uuid: 648732c6255649ecb068b639786f03c3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756830774880
+status: 3
+tags: []
+user_id: fahad

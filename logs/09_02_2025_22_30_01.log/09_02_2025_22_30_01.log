@@ -1,0 +1,45 @@
+[ 2025-09-02 22:30:06,539 ] 20 root - INFO - Starting Data Ingestion
+[ 2025-09-02 22:30:06,540 ] 22 root - INFO - Reading data using Pandas from local file system
+[ 2025-09-02 22:30:06,563 ] 24 root - INFO - Data reading completed
+[ 2025-09-02 22:30:06,619 ] 28 root - INFO - Raw data has been stored
+[ 2025-09-02 22:30:06,622 ] 31 root - INFO - Raw data has been split into train and test sets
+[ 2025-09-02 22:30:06,678 ] 36 root - INFO - Data Ingestion has been completed!
+[ 2025-09-02 22:30:06,679 ] 50 root - INFO - Created feature store configuration at /home/fahad/Cline/model-training-with-modular-workflow/feature_repo/feature_store.yaml
+[ 2025-09-02 22:30:06,697 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:30:06,706 ] 54 root - INFO - Feature store initialized successfully
+[ 2025-09-02 22:30:06,730 ] 110 root - INFO - Read train and test data completed
+[ 2025-09-02 22:30:06,731 ] 111 root - INFO - Obtaining preprocessing object
+[ 2025-09-02 22:30:06,731 ] 62 root - INFO - Data Transformation Started
+[ 2025-09-02 22:30:06,733 ] 123 root - INFO - Applying preprocessing object on training and testing datasets.
+[ 2025-09-02 22:30:06,765 ] 128 root - INFO - Starting feature store operations
+[ 2025-09-02 22:30:06,765 ] 157 root - INFO - Original dataframe shape: (5634, 21)
+[ 2025-09-02 22:30:06,766 ] 158 root - INFO - Original dataframe columns: ['customerID', 'gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure', 'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod', 'MonthlyCharges', 'TotalCharges', 'Churn']
+[ 2025-09-02 22:30:06,816 ] 191 root - INFO - Saved feature data to feature_repo/data/train_features.parquet
+[ 2025-09-02 22:30:06,868 ] 196 root - INFO - Verified parquet file. Shape: (5634, 23)
+[ 2025-09-02 22:30:06,871 ] 246 root - INFO - Including 20 fields in feature view
+[ 2025-09-02 22:30:06,872 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:30:06,891 ] 260 root - INFO - Applied entity and feature view for train
+[ 2025-09-02 22:30:06,891 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:30:06,899 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:30:06,900 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:30:06,912 ] 274 root - ERROR - Failed to materialize features: An error occurred while calling the read_parquet method registered to the pandas backend.
+Original Message: /home/fahad/Cline/model-training-with-modular-workflow/data/train_features.parquet
+[ 2025-09-02 22:30:06,912 ] 132 root - INFO - Pushed training data to feature store
+[ 2025-09-02 22:30:06,913 ] 157 root - INFO - Original dataframe shape: (1409, 21)
+[ 2025-09-02 22:30:06,913 ] 158 root - INFO - Original dataframe columns: ['customerID', 'gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure', 'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod', 'MonthlyCharges', 'TotalCharges', 'Churn']
+[ 2025-09-02 22:30:06,931 ] 191 root - INFO - Saved feature data to feature_repo/data/test_features.parquet
+[ 2025-09-02 22:30:06,941 ] 196 root - INFO - Verified parquet file. Shape: (1409, 23)
+[ 2025-09-02 22:30:06,944 ] 246 root - INFO - Including 20 fields in feature view
+[ 2025-09-02 22:30:06,944 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:30:06,954 ] 260 root - INFO - Applied entity and feature view for test
+[ 2025-09-02 22:30:06,955 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:30:06,966 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:30:06,967 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:30:06,969 ] 274 root - ERROR - Failed to materialize features: An error occurred while calling the read_parquet method registered to the pandas backend.
+Original Message: /home/fahad/Cline/model-training-with-modular-workflow/data/train_features.parquet
+[ 2025-09-02 22:30:06,969 ] 135 root - INFO - Pushed testing data to feature store
+[ 2025-09-02 22:30:07,430 ] 870 urllib3.connectionpool - WARNING - Retrying (Retry(total=4, connect=4, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f720f67ffd0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Modular_Workflow_Churn_Prediction_Pipeline
+[ 2025-09-02 22:30:12,123 ] 870 urllib3.connectionpool - WARNING - Retrying (Retry(total=3, connect=3, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f720f6971c0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Modular_Workflow_Churn_Prediction_Pipeline
+[ 2025-09-02 22:30:22,227 ] 870 urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=2, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f725154edc0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Modular_Workflow_Churn_Prediction_Pipeline
+[ 2025-09-02 22:30:38,963 ] 870 urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=1, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f725152d370>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Modular_Workflow_Churn_Prediction_Pipeline
+[ 2025-09-02 22:31:13,283 ] 870 urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=0, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f725293fd60>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Modular_Workflow_Churn_Prediction_Pipeline

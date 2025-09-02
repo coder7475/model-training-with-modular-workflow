@@ -5,7 +5,7 @@ from src.components.model_trainer import ModelTrainer
 if __name__ == "__main__":
     # Data Ingestion
     obj = DataIngestion()
-    train_data_path, test_data_path = obj.initiate_data_ingestion()
+    train_data_path, test_data_path, _ = obj.initiate_data_ingestion()
 
     # Data Transformation
     data_transformation = DataTransformation()

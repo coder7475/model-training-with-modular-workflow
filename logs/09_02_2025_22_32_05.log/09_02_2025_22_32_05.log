@@ -1,0 +1,54 @@
+[ 2025-09-02 22:32:10,245 ] 20 root - INFO - Starting Data Ingestion
+[ 2025-09-02 22:32:10,245 ] 22 root - INFO - Reading data using Pandas from local file system
+[ 2025-09-02 22:32:10,283 ] 24 root - INFO - Data reading completed
+[ 2025-09-02 22:32:10,370 ] 28 root - INFO - Raw data has been stored
+[ 2025-09-02 22:32:10,373 ] 31 root - INFO - Raw data has been split into train and test sets
+[ 2025-09-02 22:32:10,439 ] 36 root - INFO - Data Ingestion has been completed!
+[ 2025-09-02 22:32:10,439 ] 50 root - INFO - Created feature store configuration at /home/fahad/Cline/model-training-with-modular-workflow/feature_repo/feature_store.yaml
+[ 2025-09-02 22:32:10,460 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:32:10,470 ] 54 root - INFO - Feature store initialized successfully
+[ 2025-09-02 22:32:10,492 ] 110 root - INFO - Read train and test data completed
+[ 2025-09-02 22:32:10,492 ] 111 root - INFO - Obtaining preprocessing object
+[ 2025-09-02 22:32:10,493 ] 62 root - INFO - Data Transformation Started
+[ 2025-09-02 22:32:10,495 ] 123 root - INFO - Applying preprocessing object on training and testing datasets.
+[ 2025-09-02 22:32:10,519 ] 128 root - INFO - Starting feature store operations
+[ 2025-09-02 22:32:10,520 ] 157 root - INFO - Original dataframe shape: (5634, 21)
+[ 2025-09-02 22:32:10,520 ] 158 root - INFO - Original dataframe columns: ['customerID', 'gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure', 'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod', 'MonthlyCharges', 'TotalCharges', 'Churn']
+[ 2025-09-02 22:32:10,566 ] 191 root - INFO - Saved feature data to feature_repo/data/train_features.parquet
+[ 2025-09-02 22:32:10,604 ] 196 root - INFO - Verified parquet file. Shape: (5634, 23)
+[ 2025-09-02 22:32:10,607 ] 246 root - INFO - Including 20 fields in feature view
+[ 2025-09-02 22:32:10,608 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:32:10,625 ] 260 root - INFO - Applied entity and feature view for train
+[ 2025-09-02 22:32:10,625 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:32:10,633 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:32:10,633 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:32:10,643 ] 274 root - ERROR - Failed to materialize features: An error occurred while calling the read_parquet method registered to the pandas backend.
+Original Message: /home/fahad/Cline/model-training-with-modular-workflow/data/train_features.parquet
+[ 2025-09-02 22:32:10,643 ] 132 root - INFO - Pushed training data to feature store
+[ 2025-09-02 22:32:10,644 ] 157 root - INFO - Original dataframe shape: (1409, 21)
+[ 2025-09-02 22:32:10,644 ] 158 root - INFO - Original dataframe columns: ['customerID', 'gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure', 'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod', 'MonthlyCharges', 'TotalCharges', 'Churn']
+[ 2025-09-02 22:32:10,661 ] 191 root - INFO - Saved feature data to feature_repo/data/test_features.parquet
+[ 2025-09-02 22:32:10,670 ] 196 root - INFO - Verified parquet file. Shape: (1409, 23)
+[ 2025-09-02 22:32:10,673 ] 246 root - INFO - Including 20 fields in feature view
+[ 2025-09-02 22:32:10,673 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:32:10,680 ] 260 root - INFO - Applied entity and feature view for test
+[ 2025-09-02 22:32:10,681 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:32:10,689 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:32:10,690 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:32:10,693 ] 274 root - ERROR - Failed to materialize features: An error occurred while calling the read_parquet method registered to the pandas backend.
+Original Message: /home/fahad/Cline/model-training-with-modular-workflow/data/train_features.parquet
+[ 2025-09-02 22:32:10,693 ] 135 root - INFO - Pushed testing data to feature store
+[ 2025-09-02 22:32:11,149 ] 124 root - INFO - Starting model training pipeline
+[ 2025-09-02 22:32:11,150 ] 167 root - INFO - Training RandomForest
+[ 2025-09-02 22:32:11,381 ] 53 root - INFO - Started Training RandomForest
+[ 2025-09-02 22:32:48,260 ] 74 root - INFO - Best Paramaters for RandomForest: {'best_class_weight': 'balanced', 'best_max_depth': 10, 'best_min_samples_split': 2, 'best_n_estimators': 50}
+[ 2025-09-02 22:32:54,837 ] 115 root - INFO - Completed Training RandomForest
+[ 2025-09-02 22:32:54,876 ] 167 root - INFO - Training DecisionTree
+[ 2025-09-02 22:32:54,924 ] 53 root - INFO - Started Training DecisionTree
+[ 2025-09-02 22:33:00,100 ] 74 root - INFO - Best Paramaters for DecisionTree: {'best_class_weight': 'balanced', 'best_criterion': 'entropy', 'best_max_depth': 3, 'best_min_samples_split': 2}
+[ 2025-09-02 22:33:03,586 ] 115 root - INFO - Completed Training DecisionTree
+[ 2025-09-02 22:33:03,614 ] 167 root - INFO - Training LogisticRegression
+[ 2025-09-02 22:33:03,643 ] 53 root - INFO - Started Training LogisticRegression
+[ 2025-09-02 22:33:09,262 ] 74 root - INFO - Best Paramaters for LogisticRegression: {'best_C': 0.01, 'best_class_weight': 'balanced', 'best_solver': 'saga'}
+[ 2025-09-02 22:33:12,208 ] 115 root - INFO - Completed Training LogisticRegression
+[ 2025-09-02 22:33:12,239 ] 184 root - INFO - Best model: RandomForest with accuracy:0.7927608232789212

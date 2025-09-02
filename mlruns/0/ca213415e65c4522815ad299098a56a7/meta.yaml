@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/ca213415e65c4522815ad299098a56a7/artifacts
+end_time: 1756829844366
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ca213415e65c4522815ad299098a56a7
+run_name: complete_pipeline
+run_uuid: ca213415e65c4522815ad299098a56a7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756829843859
+status: 4
+tags: []
+user_id: fahad

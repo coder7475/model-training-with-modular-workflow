@@ -218,7 +218,7 @@ class ModelTrainer:
         except Exception as e:
             logging.error(f"Error in model training pipeline: {str(e)}")
             raise CustomException
-        
+    @staticmethod   
     def main():
         try:
             # Start MLflow run for entire pipeline

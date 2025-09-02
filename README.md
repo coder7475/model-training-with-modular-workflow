@@ -124,7 +124,17 @@ python3 src/components/data_ingestion.py
 
 2. **Data transformation**: This is stage for data exploration, data cleaning, feature engineering. It takes raw data from data ingestion stage and creates featured data for model training.
 
+```py
+python3 src/components/data_transformation.py
+```
+
 3. **Model Training**: This stages takes the featured data from data transformation stage and trains models using the data. This stage work is to select architecture for model continuously train, tune a model. The models is the output of this stage.
+
+Ensure the MLflow server is running before executing:
+
+```bash
+python3 src/pipelines/training_pipeline.py
+```
 
 4. **Model Evaluation**: This stage compares the trained model to select the best of them. Prepares the model for deployment.
 

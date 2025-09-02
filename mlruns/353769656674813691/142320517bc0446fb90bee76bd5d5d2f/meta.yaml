@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/353769656674813691/142320517bc0446fb90bee76bd5d5d2f/artifacts
+end_time: 1756830774838
+entry_point_name: ''
+experiment_id: '353769656674813691'
+lifecycle_stage: active
+run_id: 142320517bc0446fb90bee76bd5d5d2f
+run_name: RandomForest_training_run_20250902_223211
+run_uuid: 142320517bc0446fb90bee76bd5d5d2f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756830731348
+status: 3
+tags: []
+user_id: fahad

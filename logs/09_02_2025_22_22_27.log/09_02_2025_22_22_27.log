@@ -1,0 +1,104 @@
+[ 2025-09-02 22:22:32,032 ] 251 root - INFO - Starting Data Ingestion
+[ 2025-09-02 22:22:32,033 ] 20 root - INFO - Starting Data Ingestion
+[ 2025-09-02 22:22:32,033 ] 22 root - INFO - Reading data using Pandas from local file system
+[ 2025-09-02 22:22:32,132 ] 24 root - INFO - Data reading completed
+[ 2025-09-02 22:22:32,274 ] 28 root - INFO - Raw data has been stored
+[ 2025-09-02 22:22:32,279 ] 31 root - INFO - Raw data has been split into train and test sets
+[ 2025-09-02 22:22:32,376 ] 36 root - INFO - Data Ingestion has been completed!
+[ 2025-09-02 22:22:32,383 ] 270 root - INFO - Data ingestion completed. Train: artifacts/data_ingestion/train.csv, Test: artifacts/data_ingestion/test.csv
+[ 2025-09-02 22:22:32,383 ] 273 root - INFO - Starting Data Transformation
+[ 2025-09-02 22:22:32,383 ] 50 root - INFO - Created feature store configuration at /home/fahad/Cline/model-training-with-modular-workflow/feature_repo/feature_store.yaml
+[ 2025-09-02 22:22:32,418 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:22:32,432 ] 54 root - INFO - Feature store initialized successfully
+[ 2025-09-02 22:22:32,471 ] 110 root - INFO - Read train and test data completed
+[ 2025-09-02 22:22:32,472 ] 111 root - INFO - Obtaining preprocessing object
+[ 2025-09-02 22:22:32,472 ] 62 root - INFO - Data Transformation Started
+[ 2025-09-02 22:22:32,475 ] 123 root - INFO - Applying preprocessing object on training and testing datasets.
+[ 2025-09-02 22:22:32,509 ] 128 root - INFO - Starting feature store operations
+[ 2025-09-02 22:22:32,509 ] 157 root - INFO - Original dataframe shape: (5634, 21)
+[ 2025-09-02 22:22:32,509 ] 158 root - INFO - Original dataframe columns: ['customerID', 'gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure', 'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod', 'MonthlyCharges', 'TotalCharges', 'Churn']
+[ 2025-09-02 22:22:32,556 ] 191 root - INFO - Saved feature data to feature_repo/data/train_features.parquet
+[ 2025-09-02 22:22:32,596 ] 196 root - INFO - Verified parquet file. Shape: (5634, 23)
+[ 2025-09-02 22:22:32,603 ] 246 root - INFO - Including 20 fields in feature view
+[ 2025-09-02 22:22:32,604 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:22:32,622 ] 260 root - INFO - Applied entity and feature view for train
+[ 2025-09-02 22:22:32,623 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:22:32,632 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:22:32,632 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:22:32,646 ] 274 root - ERROR - Failed to materialize features: An error occurred while calling the read_parquet method registered to the pandas backend.
+Original Message: /home/fahad/Cline/model-training-with-modular-workflow/data/train_features.parquet
+[ 2025-09-02 22:22:32,649 ] 132 root - INFO - Pushed training data to feature store
+[ 2025-09-02 22:22:32,650 ] 157 root - INFO - Original dataframe shape: (1409, 21)
+[ 2025-09-02 22:22:32,650 ] 158 root - INFO - Original dataframe columns: ['customerID', 'gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure', 'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod', 'MonthlyCharges', 'TotalCharges', 'Churn']
+[ 2025-09-02 22:22:32,675 ] 191 root - INFO - Saved feature data to feature_repo/data/test_features.parquet
+[ 2025-09-02 22:22:32,687 ] 196 root - INFO - Verified parquet file. Shape: (1409, 23)
+[ 2025-09-02 22:22:32,690 ] 246 root - INFO - Including 20 fields in feature view
+[ 2025-09-02 22:22:32,691 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:22:32,700 ] 260 root - INFO - Applied entity and feature view for test
+[ 2025-09-02 22:22:32,701 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:22:32,708 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:22:32,709 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:22:32,711 ] 274 root - ERROR - Failed to materialize features: An error occurred while calling the read_parquet method registered to the pandas backend.
+Original Message: /home/fahad/Cline/model-training-with-modular-workflow/data/train_features.parquet
+[ 2025-09-02 22:22:32,711 ] 135 root - INFO - Pushed testing data to feature store
+[ 2025-09-02 22:22:32,715 ] 279 root - INFO - Data transformation completed. Preprocessor saved to: artifacts/data_transformation/preprocessor.pkl
+[ 2025-09-02 22:22:32,716 ] 282 root - INFO - Starting Model Training
+[ 2025-09-02 22:22:32,770 ] 129 root - INFO - Starting model training pipeline
+[ 2025-09-02 22:22:32,770 ] 139 root - INFO - Training data shape: X_train: (5634, 19), y_train: (5634,)
+[ 2025-09-02 22:22:32,770 ] 140 root - INFO - Testing data shape: X_test: (1409, 19), y_test: (1409,)
+[ 2025-09-02 22:22:32,771 ] 175 root - INFO - Training RandomForest
+[ 2025-09-02 22:22:32,771 ] 124 root - ERROR - Error in training RandomForest: Run with UUID 382c8b74748940f9908c0337aa862bd7 is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+[ 2025-09-02 22:22:32,771 ] 51 root - ERROR - 
+Error occurred in Python script:
+→ File: src/components/model_trainer.py
+→ Line number: 52
+→ Error message: Run with UUID 382c8b74748940f9908c0337aa862bd7 is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+[ 2025-09-02 22:22:32,771 ] 189 root - ERROR - Failed to train RandomForest: 
+Error occurred in Python script:
+→ File: src/components/model_trainer.py
+→ Line number: 52
+→ Error message: Run with UUID 382c8b74748940f9908c0337aa862bd7 is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+[ 2025-09-02 22:22:32,771 ] 175 root - INFO - Training DecisionTree
+[ 2025-09-02 22:22:32,771 ] 124 root - ERROR - Error in training DecisionTree: Run with UUID 382c8b74748940f9908c0337aa862bd7 is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+[ 2025-09-02 22:22:32,771 ] 51 root - ERROR - 
+Error occurred in Python script:
+→ File: src/components/model_trainer.py
+→ Line number: 52
+→ Error message: Run with UUID 382c8b74748940f9908c0337aa862bd7 is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+[ 2025-09-02 22:22:32,771 ] 189 root - ERROR - Failed to train DecisionTree: 
+Error occurred in Python script:
+→ File: src/components/model_trainer.py
+→ Line number: 52
+→ Error message: Run with UUID 382c8b74748940f9908c0337aa862bd7 is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+[ 2025-09-02 22:22:32,772 ] 175 root - INFO - Training LogisticRegression
+[ 2025-09-02 22:22:32,772 ] 124 root - ERROR - Error in training LogisticRegression: Run with UUID 382c8b74748940f9908c0337aa862bd7 is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+[ 2025-09-02 22:22:32,772 ] 51 root - ERROR - 
+Error occurred in Python script:
+→ File: src/components/model_trainer.py
+→ Line number: 52
+→ Error message: Run with UUID 382c8b74748940f9908c0337aa862bd7 is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+[ 2025-09-02 22:22:32,772 ] 189 root - ERROR - Failed to train LogisticRegression: 
+Error occurred in Python script:
+→ File: src/components/model_trainer.py
+→ Line number: 52
+→ Error message: Run with UUID 382c8b74748940f9908c0337aa862bd7 is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+[ 2025-09-02 22:22:32,772 ] 241 root - ERROR - Error in model training pipeline: 'NoneType' object has no attribute 'tb_frame'
+[ 2025-09-02 22:22:32,772 ] 51 root - ERROR - 
+Error occurred in Python script:
+→ File: src/components/model_trainer.py
+→ Line number: 193
+→ Error message: 'NoneType' object has no attribute 'tb_frame'
+[ 2025-09-02 22:22:32,806 ] 291 root - ERROR - Error in training pipeline: 
+Error occurred in Python script:
+→ File: src/components/model_trainer.py
+→ Line number: 193
+→ Error message: 'NoneType' object has no attribute 'tb_frame'
+[ 2025-09-02 22:22:32,806 ] 51 root - ERROR - 
+Error occurred in Python script:
+→ File: src/components/model_trainer.py
+→ Line number: 284
+→ Error message: 
+Error occurred in Python script:
+→ File: src/components/model_trainer.py
+→ Line number: 193
+→ Error message: 'NoneType' object has no attribute 'tb_frame'

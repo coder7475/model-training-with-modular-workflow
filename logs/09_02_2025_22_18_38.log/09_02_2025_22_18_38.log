@@ -1,0 +1,13 @@
+[ 2025-09-02 22:18:43,382 ] 227 root - INFO - Starting Data Ingestion
+[ 2025-09-02 22:18:43,383 ] 20 root - INFO - Starting Data Ingestion
+[ 2025-09-02 22:18:43,383 ] 22 root - INFO - Reading data using Pandas from local file system
+[ 2025-09-02 22:18:43,495 ] 24 root - INFO - Data reading completed
+[ 2025-09-02 22:18:43,623 ] 28 root - INFO - Raw data has been stored
+[ 2025-09-02 22:18:43,628 ] 31 root - INFO - Raw data has been split into train and test sets
+[ 2025-09-02 22:18:43,708 ] 36 root - INFO - Data Ingestion has been completed!
+[ 2025-09-02 22:18:43,711 ] 250 root - ERROR - Error in training pipeline: too many values to unpack (expected 2)
+[ 2025-09-02 22:18:43,711 ] 51 root - ERROR - 
+Error occurred in Python script:
+→ File: src/components/model_trainer.py
+→ Line number: 229
+→ Error message: too many values to unpack (expected 2)
