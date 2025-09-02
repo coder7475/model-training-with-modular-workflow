@@ -1,4 +1,4 @@
-## ML Modular Workflow Setup
+## Churn Prediction Pipeline
 
 This project demonstrates a machine learning workflow that provides a structured approach to building, training, and deploying machine learning models.
 
