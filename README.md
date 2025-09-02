@@ -118,6 +118,10 @@ Machine Learning training and development phase can be divided into 4 steps:
 
 1. **Data Ingestion**: In this step raw data is taken from data sources (e.g database, warehouse etc) and preprocessed and split into training, test and validation sets.
 
+```py
+python3 src/components/data_ingestion.py
+```
+
 2. **Data transformation**: This is stage for data exploration, data cleaning, feature engineering. It takes raw data from data ingestion stage and creates featured data for model training.
 
 3. **Model Training**: This stages takes the featured data from data transformation stage and trains models using the data. This stage work is to select architecture for model continuously train, tune a model. The models is the output of this stage.
