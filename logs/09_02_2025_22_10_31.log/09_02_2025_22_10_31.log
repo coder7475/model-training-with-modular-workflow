@@ -1,0 +1,35 @@
+[ 2025-09-02 22:10:37,429 ] 335 root - INFO - Starting Data Transformation main execution
+[ 2025-09-02 22:10:37,430 ] 50 root - INFO - Created feature store configuration at /home/fahad/Cline/model-training-with-modular-workflow/feature_repo/feature_store.yaml
+[ 2025-09-02 22:10:37,453 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:10:37,461 ] 54 root - INFO - Feature store initialized successfully
+[ 2025-09-02 22:10:37,493 ] 110 root - INFO - Read train and test data completed
+[ 2025-09-02 22:10:37,494 ] 111 root - INFO - Obtaining preprocessing object
+[ 2025-09-02 22:10:37,494 ] 62 root - INFO - Data Transformation Started
+[ 2025-09-02 22:10:37,498 ] 123 root - INFO - Applying preprocessing object on training and testing datasets.
+[ 2025-09-02 22:10:37,538 ] 128 root - INFO - Starting feature store operations
+[ 2025-09-02 22:10:37,539 ] 157 root - INFO - Original dataframe shape: (5634, 21)
+[ 2025-09-02 22:10:37,539 ] 158 root - INFO - Original dataframe columns: ['customerID', 'gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure', 'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod', 'MonthlyCharges', 'TotalCharges', 'Churn']
+[ 2025-09-02 22:10:37,586 ] 191 root - INFO - Saved feature data to feature_repo/data/train_features.parquet
+[ 2025-09-02 22:10:37,649 ] 196 root - INFO - Verified parquet file. Shape: (5634, 23)
+[ 2025-09-02 22:10:37,652 ] 246 root - INFO - Including 20 fields in feature view
+[ 2025-09-02 22:10:37,653 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:10:37,665 ] 260 root - INFO - Applied entity and feature view for train
+[ 2025-09-02 22:10:37,669 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:10:37,678 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:10:37,679 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:10:37,691 ] 274 root - ERROR - Failed to materialize features: An error occurred while calling the read_parquet method registered to the pandas backend.
+Original Message: /home/fahad/Cline/model-training-with-modular-workflow/data/test_features.parquet
+[ 2025-09-02 22:10:37,691 ] 132 root - INFO - Pushed training data to feature store
+[ 2025-09-02 22:10:37,692 ] 157 root - INFO - Original dataframe shape: (1409, 21)
+[ 2025-09-02 22:10:37,692 ] 158 root - INFO - Original dataframe columns: ['customerID', 'gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure', 'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod', 'MonthlyCharges', 'TotalCharges', 'Churn']
+[ 2025-09-02 22:10:37,713 ] 191 root - INFO - Saved feature data to feature_repo/data/test_features.parquet
+[ 2025-09-02 22:10:37,722 ] 196 root - INFO - Verified parquet file. Shape: (1409, 23)
+[ 2025-09-02 22:10:37,727 ] 246 root - INFO - Including 20 fields in feature view
+[ 2025-09-02 22:10:37,727 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:10:37,736 ] 260 root - INFO - Applied entity and feature view for test
+[ 2025-09-02 22:10:37,736 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:10:37,745 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:10:37,746 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 22:10:37,749 ] 274 root - ERROR - Failed to materialize features: An error occurred while calling the read_parquet method registered to the pandas backend.
+Original Message: /home/fahad/Cline/model-training-with-modular-workflow/data/train_features.parquet
+[ 2025-09-02 22:10:37,749 ] 135 root - INFO - Pushed testing data to feature store

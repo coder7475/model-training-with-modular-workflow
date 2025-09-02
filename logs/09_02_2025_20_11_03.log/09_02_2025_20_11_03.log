@@ -1,0 +1,47 @@
+[ 2025-09-02 20:11:06,267 ] 238 root - INFO - Starting Data Transformation main execution
+[ 2025-09-02 20:11:06,267 ] 51 root - INFO - Configuration file content:
+project: churn_prediction
+provider: local
+registry: data/registry.db
+online_store:
+  type: sqlite
+offline_store:
+  type: file
+entity_key_serialization_version: 2
+[ 2025-09-02 20:11:06,281 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 20:11:06,286 ] 54 root - INFO - Feature store initialized successfully
+[ 2025-09-02 20:11:06,302 ] 98 root - INFO - Read train and test data completed
+[ 2025-09-02 20:11:06,302 ] 99 root - INFO - Obtaining preprocessing object
+[ 2025-09-02 20:11:06,302 ] 61 root - INFO - Data Transformation Started
+[ 2025-09-02 20:11:06,304 ] 109 root - INFO - Applying preprocessing object on training and testing datasets.
+[ 2025-09-02 20:11:06,323 ] 113 root - INFO - Starting feature store operations
+[ 2025-09-02 20:11:06,358 ] 147 root - INFO - Saved feature data to feature_repo/data/train_features.parquet
+[ 2025-09-02 20:11:06,359 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 20:11:06,365 ] 187 root - INFO - Applied entity and feature view for train
+[ 2025-09-02 20:11:06,365 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 20:11:06,368 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 20:11:06,369 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 20:11:06,375 ] 195 root - ERROR - Error in push_features_to_store: An error occurred while calling the read_parquet method registered to the pandas backend.
+Original Message: /home/fahad/Cline/model-training-with-modular-workflow/data/train_features.parquet
+[ 2025-09-02 20:11:06,375 ] 51 root - ERROR - 
+Error occurred in Python script:
+→ File: src/components/data_transformation.py
+→ Line number: 189
+→ Error message: An error occurred while calling the read_parquet method registered to the pandas backend.
+Original Message: /home/fahad/Cline/model-training-with-modular-workflow/data/train_features.parquet
+[ 2025-09-02 20:11:06,375 ] 128 root - ERROR - Error in data transformation: 
+Error occurred in Python script:
+→ File: src/components/data_transformation.py
+→ Line number: 189
+→ Error message: An error occurred while calling the read_parquet method registered to the pandas backend.
+Original Message: /home/fahad/Cline/model-training-with-modular-workflow/data/train_features.parquet
+[ 2025-09-02 20:11:06,375 ] 51 root - ERROR - 
+Error occurred in Python script:
+→ File: src/components/data_transformation.py
+→ Line number: 114
+→ Error message: 
+Error occurred in Python script:
+→ File: src/components/data_transformation.py
+→ Line number: 189
+→ Error message: An error occurred while calling the read_parquet method registered to the pandas backend.
+Original Message: /home/fahad/Cline/model-training-with-modular-workflow/data/train_features.parquet
