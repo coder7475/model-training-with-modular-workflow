@@ -48,7 +48,7 @@ Then to activate the Python virtual environment, run the following command:
 source venv/bin/activate
 ```
 
-Then run the following code to make sure python has path to virtual environments python:
+If your python can't be found. Then run the following code to make sure python has path to virtual environments python:
 
 ```bash
 export PYTHONPATH=~/path_to_directory/model-training-with-modular-workflow
@@ -62,8 +62,7 @@ To install all packages and initialize the project, run the following command:
 pip install -e .
 ```
 
-This will run the setup.py file to initialize the project and save metadata. Make sure you have `requirements.txt`,
-`README.md` file ready.
+This will run the setup.py file to initialize the project and save metadata.
 
 ### Directory Structure
 

@@ -1,21 +1,46 @@
-Metadata-Version: 2.1
-Name: mlops-modular-telcome-customer-data
+Metadata-Version: 2.4
+Name: mlops_modular_telcome_customer_data
 Version: 0.1.0
 Summary: A modular MLOps Pipeline Project for Churn prediction
 Home-page: your-github-repo
 Author: Robiul Hossain
 Author-email: robiulhossain7475@gmail.com
-License: UNKNOWN
-Platform: UNKNOWN
 Classifier: Development Status :: 3 - Beta
 Classifier: Intended Audience :: ML Engineers
 Classifier: Programming Language :: Python >= 3.8
 Classifier: Operating System :: OS Independent
 Requires-Python: >=3.8
 Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: scikit-learn
+Requires-Dist: seaborn
+Requires-Dist: kaggle
+Requires-Dist: dvc
+Requires-Dist: jupyter
+Requires-Dist: feast
+Requires-Dist: mlflow
+Requires-Dist: flask
 Provides-Extra: dev
+Requires-Dist: pytest>=7.1.1; extra == "dev"
+Requires-Dist: pytest-cov>=2.12.1; extra == "dev"
+Requires-Dist: flake8>=3.9.0; extra == "dev"
+Requires-Dist: black>=22.3.0; extra == "dev"
+Requires-Dist: isort>=5.10.1; extra == "dev"
+Requires-Dist: mypy>=0.942; extra == "dev"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
 
-## ML Modular Workflow Setup
+## Churn Prediction Pipeline
 
 This project demonstrates a machine learning workflow that provides a structured approach to building, training, and deploying machine learning models.
 
@@ -65,7 +90,7 @@ Then to activate the Python virtual environment, run the following command:
 source venv/bin/activate
 ```
 
-Then run the following code to make sure python has path to virtual environments python:
+If your python can't be found. Then run the following code to make sure python has path to virtual environments python:
 
 ```bash
 export PYTHONPATH=~/path_to_directory/model-training-with-modular-workflow
@@ -132,70 +157,133 @@ Machine Learning training and development phase can be divided into 4 steps:
 
 4. **Model Evaluation**: This stage compares the trained model to select the best of them. Prepares the model for deployment.
 
-The deployment and monitoring phase for ML model includes:
+## Tools Used
 
-1. **Backend App Development**: Create a backend app to serve the model through api.
-2. **Testing**: Testing the app serves correctly.
-3. **Monitoring**: Monitoring the app is healthy and can serve reliably.
+### 1. **DVC (Data Version Control)**
 
-### Tools Used
+DVC is used for tracking data files and ensuring version control for datasets.
 
-1. **DVC (Data Version Control)**
-
-DVC
+#### Initialize DVC
 
 ```bash
 dvc init
 ```
 
-Track using
+#### Track Files
 
 ```bash
 dvc add artifacts/data_ingestion/raw.csv
 ```
 
-### Feature Store
+---
 
-To see the features in feature store
+### 2. **Feature Store**
+
+The feature store is managed using Feast, allowing storage and retrieval of features.
+
+#### View Feature Store
 
 ```bash
 cd feature_repo
 feast ui
 ```
 
-### Run MLFLOW For expeirement tracking
+---
 
-Run mlflow
+### 3. **MLflow for Experiment Tracking**
+
+MLflow is used to track experiments and visualize metrics.
+
+#### Start MLflow Server
 
 ```bash
 mlflow ui
 ```
 
-### Run ml pipeline and experiment tracking
+---
 
-Keep the mlflow server running then simply run:
+### 4. **Run ML Pipeline and Experiment Tracking**
+
+Execute the training pipeline and track the experiment metrics on MLflow.
+
+#### Run Training Pipeline
+
+Ensure the MLflow server is running before executing:
 
 ```bash
 python3 src/pipelines/training_pipeline.py
 ```
 
-### Run flask app
+---
+
+### 5. **Run Flask App**
+
+A Flask application is provided for serving the model.
+
+#### Start the Flask App
 
 ```bash
 python3 app.py
 ```
 
-### Test with a test file
+---
+
+### 6. **Test the Model API**
+
+Test the API using the provided test file.
+
+#### Run Test Request
 
 ```bash
 python3 test-request.py
 ```
 
-Output:
+#### Expected Output
 
 ```bash
 Status Code: 200
 Response: {'churn_category': 'No', 'prediction': 0, 'status': 'success'}
 ```
 
+---
 
+## Create API Endpoints with FastAPI
+
+Run flask in dev mode:
+
+1. first change virtual environment to v-fast:
+
+```bash
+python3 -m venv v-fast
+source v-fast/bin/activate
+```
+
+2. Install required packages
+
+```bash
+pip install -r fast-requirements.txt
+```
+
+3. Run the App in dev mode:
+
+```bash
+fastapi dev main.py
+```
+
+You will see the app at `https://localhost:8000`
+
+The create api for ml model inference is `https://localhost:8000/predict`
+
+# Deploy to production
+
+Use docker to build a image to deploy:
+
+```bash
+docker build -t flask-ml:0 .
+```
+
+Run the container in detach mode to deploy:
+
+```bash
+docker run -d -p 8000:8000 flask-ml:0
+```
