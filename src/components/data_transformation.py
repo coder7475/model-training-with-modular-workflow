@@ -66,7 +66,7 @@ entity_key_serialization_version: 2"""
             logging.info("Data Transformation Started")
           
             numerical_features = [
-                    "customerID", "gender", "SeniorCitizen", "Partner", "Dependents", "tenure", 
+                     "gender", "SeniorCitizen", "Partner", "Dependents", "tenure", 
                     "PhoneService", "MultipleLines", "InternetService", "OnlineSecurity", "OnlineBackup",
                     "DeviceProtection","TechSupport","StreamingTV","StreamingMovies","Contract",
                     "PaperlessBilling","PaymentMethod","MonthlyCharges","TotalCharges"
@@ -243,8 +243,7 @@ entity_key_serialization_version: 2"""
         try:
             feature_service_name = f"{entity_id}_features"
             feature_vector = self.feature_store.get_online_features(                
-                feature_refs = [
-                    f"{entity_id}_features:customerID",
+                feature_refs = [                  
                     f"{entity_id}_features:gender",
                     f"{entity_id}_features:SeniorCitizen",
                     f"{entity_id}_features:Partner",

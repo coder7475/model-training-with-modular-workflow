@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/0/0064d4d9372c4467baff20f2c58bdbd3/artifacts
+end_time: 1756819496530
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0064d4d9372c4467baff20f2c58bdbd3
+run_name: complete_pipeline
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756819495832
+status: 4
+tags: []
+user_id: fahad

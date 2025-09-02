@@ -39,14 +39,24 @@ The “Churn” column is our target.
 To run this project, first install virtual environment:
 
 ```bash
-python3 -m venv venv
+python3.8 -m venv venv
 ```
+
+👉 If `python3.8` is not found, you’ll need to install it first (`sudo apt install python3.8 python3.8-venv` on Ubuntu/Debian).
 
 Then to activate the Python virtual environment, run the following command:
 
 ```bash
 source venv/bin/activate
 ```
+
+Check if python version is 3.8:
+
+```
+python3 --version
+```
+
+If not delete venv folder and try again.
 
 If your python can't be found. Then run the following code to make sure python has path to virtual environments python:
 
@@ -66,7 +76,7 @@ This will run the setup.py file to initialize the project and save metadata.
 
 ### Directory Structure
 
-To set up the folder structure run the `folder_structure_setup.sh`. Run:
+I used this bash script to generate folder structure. If your creating new project to set up the folder structure run the `folder_structure_setup.sh`. Run:
 
 ```bash
 bash folder_structure_setup.sh
@@ -157,6 +167,8 @@ MLflow is used to track experiments and visualize metrics.
 mlflow ui
 ```
 
+You will see mlflow running on `http://127.0.0.1:5000`
+
 ---
 
 ### 4. **Run ML Pipeline and Experiment Tracking**
@@ -192,7 +204,7 @@ Test the API using the provided test file.
 #### Run Test Request
 
 ```bash
-python3 test-request.py
+python3 test-flask-app.py
 ```
 
 #### Expected Output

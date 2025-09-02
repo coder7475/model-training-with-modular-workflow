@@ -1,0 +1,30 @@
+[ 2025-09-02 19:43:55,879 ] 20 root - INFO - Data Ingestion has been started
+[ 2025-09-02 19:43:55,879 ] 22 root - INFO - Data reading using Pandas from local file system
+[ 2025-09-02 19:43:55,898 ] 24 root - INFO - Data Reading has been completed
+[ 2025-09-02 19:43:55,931 ] 28 root - INFO - Raw data has been stored
+[ 2025-09-02 19:43:55,933 ] 31 root - INFO - Raw data has been splitted into Train and Test set
+[ 2025-09-02 19:43:55,966 ] 36 root - INFO - Data Ingestion has been completed!
+[ 2025-09-02 19:43:55,966 ] 50 root - INFO - Created feature store configuration at /home/fahad/Cline/model-training-with-modular-workflow/feature_repo/feature_store.yaml
+[ 2025-09-02 19:43:55,966 ] 54 root - INFO - Configuration file content:
+project: churn_prediction
+provider: local
+registry: data/registry.db
+online_store:
+  type: sqlite
+offline_store:
+  type: file
+entity_key_serialization_version: 2
+[ 2025-09-02 19:43:55,979 ] 855 feast.infra.registry.registry - INFO - Registry cache expired, so refreshing
+[ 2025-09-02 19:43:55,983 ] 58 root - INFO - Feature store initialized successfully
+[ 2025-09-02 19:43:55,996 ] 114 root - INFO - Read train and test data completed
+[ 2025-09-02 19:43:55,996 ] 115 root - INFO - Obtaining preprocessing object
+[ 2025-09-02 19:43:55,997 ] 66 root - INFO - Data Transformation Started
+[ 2025-09-02 19:43:55,998 ] 132 root - INFO - Applying preprocessing object on training and testing datasets.
+[ 2025-09-02 19:43:56,002 ] 157 root - ERROR - Error in data transformation: Cannot use median strategy with non-numeric data:
+could not convert string to float: '4223-BKEOR'
+[ 2025-09-02 19:43:56,002 ] 51 root - ERROR - 
+Error occurred in Python script:
+→ File: /home/fahad/Cline/model-training-with-modular-workflow/src/components/data_transformation.py
+→ Line number: 134
+→ Error message: Cannot use median strategy with non-numeric data:
+could not convert string to float: '4223-BKEOR'
